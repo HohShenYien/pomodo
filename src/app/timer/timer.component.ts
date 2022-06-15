@@ -18,7 +18,9 @@ export class TimerComponent implements OnInit {
   private curTime: number = 0;
   private seq: number = 1;
 
-  constructor(private soundEffect: SoundEffectService, public settings: SettingsService, private store: TimerTempStateService) { }
+  constructor(private soundEffect: SoundEffectService, public settings: SettingsService, private store: TimerTempStateService) {
+    this.settings.setTimerReset(this.reset.bind(this));
+  }
 
   ngOnInit(): void {
     this.reset();

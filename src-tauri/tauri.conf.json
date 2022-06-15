@@ -17,6 +17,9 @@
         "writeFile": true,
         "createDir": true,
         "scope": ["$APP/*"]
+      },
+      "window": {
+        "all": true
       }
     },
     "bundle": {
@@ -64,7 +67,9 @@
         "height": 600,
         "resizable": true,
         "title": "Pomodo App",
-        "width": 800
+        "width": 800,
+        "visible": true,
+        "decorations": false
       }
     ]
   }

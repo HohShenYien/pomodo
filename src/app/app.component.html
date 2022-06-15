@@ -1,15 +1,24 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+<div id="window">
+  <div class="titlebar" id="titlebar" data-tauri-drag-region>
+    <h1>Pomodo App</h1>
+    <div>
+      <mat-icon class="btns" (click)="minimize()">minimize</mat-icon>
+      <mat-icon class="btns" (click)="maximize()">fullscreen</mat-icon>
+      <mat-icon class="btns" (click)="close()">close</mat-icon>
+    </div>
+  </div>
+  <mat-sidenav-container class="app-container">
+    <mat-sidenav mode="side" opened [fixedInViewport]="true">
+      <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <main class="main-content">
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
 
-
-<mat-sidenav-container class="app-container">
-  <mat-sidenav mode="side" opened [fixedInViewport]="true">
-    <app-sidenav></app-sidenav>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <main class="main-content">
-      <router-outlet></router-outlet>
-    </main>
-  </mat-sidenav-content>
-</mat-sidenav-container>
 
