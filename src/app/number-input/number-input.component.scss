@@ -1,0 +1,37 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 0;
+  mat-form-field {
+    padding: 0 8px;
+    width: 100px;
+    ::ng-deep  {
+      .mat-form-field-wrapper {
+        padding: 0;
+        margin: 0;
+      }
+      .mat-form-field-infix {
+        padding: 6px 0;
+        text-align: center;
+      }
+    }
+  }
+  button {
+    height: 30px;
+    width: 30px;
+    min-width: unset;
+    border-radius: 50%;
+    padding: 0;
+    background-color: #FF6E7F;
+    transition: background-color 150ms linear;
+    &:hover {
+      background-color: #ff96a2;
+    }
+    ::ng-deep {
+      .material-icons {
+        font-size: 16px;
+      }
+    }
+  }
+}

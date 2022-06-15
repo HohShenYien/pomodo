@@ -1,0 +1,11 @@
+<div class="row">
+  <button mat-flat-button color="accent" aria-label="Minus button" (click)="decrement()">
+    <mat-icon>remove</mat-icon>
+  </button>
+  <mat-form-field appearance="outline">
+    <input matInput type="text" [(ngModel)]="val" (input)="inputValidator($event)">
+  </mat-form-field>
+  <button mat-flat-button color="accent" aria-label="Add button" (click)="increment()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

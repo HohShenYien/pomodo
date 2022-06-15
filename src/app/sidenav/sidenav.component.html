@@ -1,0 +1,16 @@
+<div class="side-nav">
+  <div class="side-nav-content">
+    <header class="header">
+      <img src="/assets/images/tomato.png" alt="Tomato Icon"/> <h1>Pomodo</h1>
+    </header>
+    <nav class="nav-links">
+      <a class="nav" *ngFor="let item of navs; index as i;"
+         [routerLink]="item.link"
+         [routerLinkActive]="['is-active']"
+         [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon aria-hidden="false">{{item.icon}}</mat-icon>
+        {{item.name}}
+      </a>
+    </nav>
+  </div>
+</div>

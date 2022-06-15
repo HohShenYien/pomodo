@@ -1,0 +1,27 @@
+.settings {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  .inputs {
+    h5 {
+      font-size: 1.2rem;
+      margin-right: 40px;
+      margin-top: 0;
+      margin-bottom: 0;
+      display: inline-block;
+    }
+    .volume {
+      margin-left: 8px;
+      font-size: 1.1rem;
+      display: inline-block;
+      width: 4ch;
+    }
+    td {
+      padding-bottom: 8px;
+      height: 40px;
+      &:nth-child(2) {
+        text-align: center;
+      }
+    }
+  }
+}

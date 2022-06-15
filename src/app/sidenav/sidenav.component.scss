@@ -1,0 +1,52 @@
+.side-nav {
+  height: 100%;
+  padding: 0 15px;
+
+  .side-nav-content {
+    margin: 0;
+    padding: 30px 0 0;
+
+    header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: default;
+
+      img {
+        width: 60px;
+        margin-right: 8px;
+      }
+    }
+
+    .nav-links {
+      padding: 8px;
+      margin: 0;
+
+      a {
+        padding: 12px 30px;
+        margin-bottom: 16px;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-decoration: none;
+        color: tomato;
+        border-radius: 3px;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-weight: bold;
+
+        &:hover {
+          background-color: darksalmon;
+          color: white;
+        }
+
+        &.is-active {
+          color: white;
+          background-color: salmon;
+        }
+      }
+
+    }
+  }
+}

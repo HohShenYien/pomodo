@@ -1,0 +1,86 @@
+<div class="settings">
+  <table class="inputs">
+    <tr>
+      <td>
+        <h5 matTooltip="Duration for each pomodori">
+          Focus Time (minutes)
+        </h5>
+      </td>
+      <td>
+        <app-number-input [(val)]="data.focusTime"></app-number-input>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h5 matTooltip="Duration for each short rest">
+          Short Rest Time (minutes)
+        </h5>
+      </td>
+      <td>
+        <app-number-input [(val)]="data.restTime"></app-number-input>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h5 matTooltip="Duration for each long rest">
+          Long Rest Time (minutes)
+        </h5>
+      </td>
+      <td>
+        <app-number-input [(val)]="data.longRestTime"></app-number-input>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h5 matTooltip="Number of rounds before long rest">
+          Rounds
+        </h5>
+      </td>
+      <td>
+        <app-number-input [(val)]="data.rounds"></app-number-input>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h5 matTooltip="Play the sound effect or not">
+          Sound Effect
+        </h5>
+      </td>
+      <td>
+        <mat-slide-toggle [(ngModel)]="data.soundEffect">{{ data.soundEffect ? 'Playing' : 'Muted'}}</mat-slide-toggle>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h5 matTooltip="Volume of the sound effect">
+          Volume
+        </h5>
+      </td>
+      <td>
+        <mat-slider
+          thumbLabel
+          tickInterval="1"
+          step="1"
+          min="0"
+          max="100"
+          aria-label="units"
+          [(value)]="data.volume"
+        ></mat-slider>
+        <div class="volume">
+          {{data.volume}}%
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h5 matTooltip="Showing notification or not">
+          Notification
+        </h5>
+      </td>
+      <td>
+        <mat-slide-toggle [(ngModel)]="data.notification">{{ data.notification ? 'Show' : 'Hide'}}</mat-slide-toggle>
+      </td>
+    </tr>
+  </table>
+
+</div>

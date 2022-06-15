@@ -1,0 +1,39 @@
+<div class="timer">
+  <h2 class="text">{{getStatus()}}</h2>
+  <div class="time-container">
+    <mat-progress-spinner mode="determinate"
+                          value="100"
+                          color="primary"
+                          class="timer-background"
+                          [diameter]="size"
+    ></mat-progress-spinner>
+    <mat-progress-spinner mode="determinate"
+                          [value]="getProgress()"
+                          color="warn"
+                          [diameter]="size"
+                          class="timer-progress"
+    ></mat-progress-spinner>
+    <div class="time">{{getTime()}}</div>
+
+  </div>
+  <button mat-stroked-button
+          color="primary"
+          class="start-button"
+          [ngClass]="isStop() ? 'active' : ''"
+          (click)="start()">
+    START
+  </button>
+  <div class="controls" [ngClass]="isStop() ? '' : 'active'">
+    <button mat-flat-button aria-label="Stop" class="control-btns" (click)="stop()">
+      <mat-icon>stop</mat-icon>
+    </button>
+    <button mat-flat-button aria-label="Play or pause" class="control-btns" (click)="pausePlay()">
+      <mat-icon *ngIf="isPause()">play_arrow</mat-icon>
+      <mat-icon *ngIf="isPlay()">pause</mat-icon>
+    </button>
+    <button mat-flat-button aria-label="Skip to next iteration" class="control-btns" (click)="skip()">
+      <mat-icon>skip_next</mat-icon>
+    </button>
+  </div>
+
+</div>
