@@ -19,19 +19,24 @@
   <button mat-stroked-button
           color="primary"
           class="start-button"
+          matTooltip="Start your pomodoro session"
           [ngClass]="isStop() ? 'active' : ''"
           (click)="start()">
     START
   </button>
   <div class="controls" [ngClass]="isStop() ? '' : 'active'">
-    <button mat-flat-button aria-label="Stop" class="control-btns" (click)="stop()">
+    <button mat-flat-button aria-label="Stop" class="control-btns" (click)="stop()" matTooltip="Stop the pomodoro">
       <mat-icon>stop</mat-icon>
     </button>
-    <button mat-flat-button aria-label="Play or pause" class="control-btns" (click)="pausePlay()">
+    <button mat-flat-button aria-label="Replay current iteration" class="control-btns" (click)="replay()" matTooltip="Replay current iteration">
+      <mat-icon>replay</mat-icon>
+    </button>
+    <button mat-flat-button aria-label="Play or pause" class="control-btns"
+            (click)="pausePlay()" [matTooltip]="isPlay() ? 'Pause the pomodoro' : 'Continue the pomodoro'">
       <mat-icon *ngIf="isPause()">play_arrow</mat-icon>
       <mat-icon *ngIf="isPlay()">pause</mat-icon>
     </button>
-    <button mat-flat-button aria-label="Skip to next iteration" class="control-btns" (click)="skip()">
+    <button mat-flat-button aria-label="Skip to next iteration" class="control-btns" (click)="skip()" matTooltip="Skip to next iteration">
       <mat-icon>skip_next</mat-icon>
     </button>
   </div>

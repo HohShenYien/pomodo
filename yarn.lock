@@ -1348,6 +1348,11 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
+"@mattlewis92/dom-autoscroller@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@mattlewis92/dom-autoscroller/-/dom-autoscroller-2.4.2.tgz#ccb753fbcf6b3672b0273e0c3bda7924fe238013"
+  integrity sha512-YbrUWREPGEjE/FU6foXcAT1YbVwqD/jkYnY1dFb0o4AxtP3s4xKBthlELjndZih8uwsDWgQZx1eNskRNe2BgZQ==
+
 "@ngtools/webpack@14.0.0":
   version "14.0.0"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-14.0.0.tgz#13a37933f13a8aa587697b7db7be6f1f20a360c1"
@@ -1450,6 +1455,11 @@
     "@npmcli/promise-spawn" "^3.0.0"
     node-gyp "^8.4.1"
     read-package-json-fast "^2.0.3"
+
+"@scarf/scarf@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@scarf/scarf/-/scarf-1.1.1.tgz#d8b9f20037b3a37dbf8dcdc4b3b72f9285bfce35"
+  integrity sha512-VGbKDbk1RFIaSmdVb0cNjjWJoRWRI/Weo23AjRCC2nryO0iAS8pzsToJfPVPtVs74WHw4L1UTADNdIYRLkirZQ==
 
 "@schematics/angular@14.0.0":
   version "14.0.0"
@@ -1933,6 +1943,33 @@ ajv@^6.12.4, ajv@^6.12.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+angular-calendar@0.29.0:
+  version "0.29.0"
+  resolved "https://registry.yarnpkg.com/angular-calendar/-/angular-calendar-0.29.0.tgz#b6f3df4752b495205dbba32794618fd4880fed71"
+  integrity sha512-TK4yUNsOhCUVrBRTJhGvVgGkQHgR0DTDFnPUTv0YSeDAuq5+irWjH23UrHmrhBCwFPelGLrTHjxsbMwjuzrJjw==
+  dependencies:
+    "@scarf/scarf" "^1.1.1"
+    angular-draggable-droppable "^6.0.0"
+    angular-resizable-element "^5.0.0"
+    calendar-utils "^0.9.0"
+    positioning "^2.0.1"
+    tslib "^2.0.0"
+
+angular-draggable-droppable@^6.0.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/angular-draggable-droppable/-/angular-draggable-droppable-6.1.0.tgz#439d3de118eca8f9f46432a875f39ec28f3b7171"
+  integrity sha512-axf3YMZ1ovhVZXnydP5iatNT5V05uK1wrUIhlJy4XGFVzIfTOGPn6d0E4r43lyDPj1r6daz3ODm8UNXzjWgcCg==
+  dependencies:
+    "@mattlewis92/dom-autoscroller" "^2.4.2"
+    tslib "^2.3.1"
+
+angular-resizable-element@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/angular-resizable-element/-/angular-resizable-element-5.0.0.tgz#c292cfd537a8e8c3850b6dc1a66ffcc1462864d1"
+  integrity sha512-GbV8myA2x8aUU8CK7siTi1QMjtilzQzIgClqUVpE/YM1WAp0/OnioBV12oLcOT24eEwP3zDqPTHL+D1Kv2rNAw==
+  dependencies:
+    tslib "^2.2.0"
+
 ansi-colors@4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-4.1.1.tgz#cbb9ae256bf750af1eab344f229aa27fe94ba348"
@@ -2287,6 +2324,11 @@ cacache@^16.0.0, cacache@^16.1.0:
     ssri "^9.0.0"
     tar "^6.1.11"
     unique-filename "^1.1.1"
+
+calendar-utils@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/calendar-utils/-/calendar-utils-0.9.0.tgz#d0b2e0bb5a2238d30afde4fe774c0afd89366c6b"
+  integrity sha512-QxMf/I+y/it02EoFvla7Fq9n4SIOK9T97wT4W0VfvbFTbhf92AYHm9IBXGWDJiARNM2pvrGCFtI8AFB0D4OuWw==
 
 call-bind@^1.0.0:
   version "1.0.2"
@@ -4939,6 +4981,11 @@ pkg-dir@^4.1.0:
   dependencies:
     find-up "^4.0.0"
 
+positioning@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/positioning/-/positioning-2.0.1.tgz#4f1b3a65ed4b830e0922a3fcdf6de58a545bd398"
+  integrity sha512-DsAgM42kV/ObuwlRpAzDTjH9E8fGKkMDJHWFX+kfNXSxh7UCCQxEmdjv/Ws5Ft1XDnt3JT8fIDYeKNSE2TbttA==
+
 postcss-attribute-case-insensitive@^5.0.0:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/postcss-attribute-case-insensitive/-/postcss-attribute-case-insensitive-5.0.1.tgz#86d323c77ab8896ed90500071c2c8329fba64fda"
@@ -6157,7 +6204,7 @@ tree-kill@1.2.2:
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
   integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
 
-tslib@2.4.0, tslib@^2.1.0, tslib@^2.3.0:
+tslib@2.4.0, tslib@^2.0.0, tslib@^2.1.0, tslib@^2.2.0, tslib@^2.3.0, tslib@^2.3.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==

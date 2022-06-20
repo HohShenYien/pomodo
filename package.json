@@ -23,6 +23,7 @@
     "@angular/router": "^14.0.0",
     "@fontsource/m-plus-rounded-1c": "^4.5.8",
     "@tauri-apps/api": "^1.0.0-rc.6",
+    "angular-calendar": "0.29.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

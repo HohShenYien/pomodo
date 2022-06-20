@@ -17,6 +17,10 @@ export class TimerComponent implements OnInit {
   private playState: TimerPlay = TimerPlay.stop;
   private curTime: number = 0;
   private seq: number = 1;
+  private totalTime: number = 0;
+  private totalSession: number = 0;
+  private counting: boolean = false;
+
 
   constructor(private soundEffect: SoundEffectService, public settings: SettingsService, private store: TimerTempStateService) {
     this.settings.setTimerReset(this.reset.bind(this));
@@ -28,7 +32,7 @@ export class TimerComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    if (this.playState !== TimerPlay.stop) {
+    if (this.playState !== TimerPlay.stop ) {
       this.store.curTime = this.curTime;
       this.store.curState = this.state;
       this.store.curRound = this.seq;
@@ -37,7 +41,20 @@ export class TimerComponent implements OnInit {
 
   public start(): void {
     this.playState = TimerPlay.play;
-    this.countDown();
+    if (!this.counting) {
+      this.countDown();
+      this.counting = true;
+    }
+  }
+
+  public replay(): void {
+    this.state = TimerState.focus;
+    this.curTime = this.settings.focusTime * 60;
+    this.playState = TimerPlay.play;
+    if (!this.counting) {
+      this.countDown();
+      this.counting = true;
+    }
   }
 
   public getTime(): string {
@@ -79,7 +96,10 @@ export class TimerComponent implements OnInit {
       this.playState = TimerPlay.pause;
     } else {
       this.playState = TimerPlay.play;
-      this.countDown();
+      if (!this.counting) {
+        this.countDown();
+        this.counting = true;
+      }
     }
   }
 
@@ -106,21 +126,27 @@ export class TimerComponent implements OnInit {
   private countDown() {
     setTimeout(() => {
       if (this.curTime > 0 && this.playState === TimerPlay.play) {
-        this.countDown();
         this.curTime--;
+        if (this.state === timerState.focus) {
+          this.totalTime++;
+        }
 
-        if (this.curTime <= 3) {
+        if (this.curTime <= 3 && this.curTime > 0) {
           if (this.state === timerState.focus) {
             this.soundEffect.playRestCountDown();
           } else {
             this.soundEffect.playStartCountDown();
           }
         }
+        this.countDown();
       }
 
       else if (this.curTime === 0) {
+        this.counting = false;
         this.goNext();
         this.start();
+      } else {
+        this.counting = false;
       }
     }, 1000);
   }
@@ -128,7 +154,6 @@ export class TimerComponent implements OnInit {
   private goNext(): void {
     switch (this.state) {
       case TimerState.focus:
-        this.soundEffect.playRest();
         if (this.seq++ === 4) {
           this.seq = 1;
           this.state = TimerState.longRest;
@@ -137,6 +162,7 @@ export class TimerComponent implements OnInit {
           this.state = TimerState.shortRest;
           this.curTime = this.settings.restTime * 60;
         }
+        this.soundEffect.playRest();
         break;
       case TimerState.shortRest:
       case TimerState.longRest:
@@ -164,6 +190,7 @@ export class TimerComponent implements OnInit {
       this.state = this.store.curState;
       this.seq = this.store.curRound;
       this.store.curTime = -1;
+      this.playState = TimerPlay.pause;
     }
   }
 }
