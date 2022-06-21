@@ -32,7 +32,7 @@ fn query_data(
     end_date: String,
     state: tauri::State<database::DatabaseState>,
 ) -> String {
-    let mut value = database::query_totals(start_date, end_date, state);
+    let value = database::query_totals(start_date, end_date, state);
     serde_json::to_string(&value).unwrap()
 }
 
@@ -42,7 +42,7 @@ fn query_all(
     end_date: String,
     state: tauri::State<database::DatabaseState>,
 ) -> String {
-    let mut value = database::query_all(start_date, end_date, state);
+    let value = database::query_all(start_date, end_date, state);
     serde_json::to_string(&value).unwrap()
 }
 

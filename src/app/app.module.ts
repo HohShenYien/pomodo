@@ -20,6 +20,13 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatSliderModule} from "@angular/material/slider";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { StatCalendarComponent } from './stat-calendar/stat-calendar.component';
+import { ResultDialogComponent } from './result-dialog/result-dialog.component';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +34,9 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     TimerComponent,
     SettingsComponent,
     StatsComponent,
-    NumberInputComponent
+    NumberInputComponent,
+    StatCalendarComponent,
+    ResultDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -42,9 +51,17 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     FormsModule,
     MatTooltipModule,
     MatSliderModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
+    MatDialogModule
   ],
-  providers: [],
+  providers: [{
+    provide: MatDialogRef,
+    useValue: {}
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

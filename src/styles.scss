@@ -2,6 +2,7 @@
 @use "node_modules/@angular/material" as mat;
 
 @import "node_modules/@fontsource/m-plus-rounded-1c";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 @include mat.core();
 
 $my-app-primary: mat.define-palette(mat.$indigo-palette);

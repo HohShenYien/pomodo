@@ -57,7 +57,7 @@ pub fn query_totals(
     let mut stmt = conn
         .prepare(
             "SELECT date, SUM(duration), SUM(num_session) FROM RECORDS 
-                    WHERE date <= date(':date_end') AND date >= date(':date_start') 
+                    WHERE date <= date(:date_end) AND date >= date(:date_start) 
                     GROUP BY date;",
         )
         .unwrap();
@@ -72,13 +72,13 @@ pub fn query_all(
     let mut stmt = conn
         .prepare(
             "SELECT date, duration, num_session FROM RECORDS 
-                    WHERE date <= date(':date_end') AND date >= date(':date_start');",
+                    WHERE date <= date(:date_end) AND date >= date(:date_start);",
         )
         .unwrap();
     transform_to_vec(stmt, date_start, date_end)
 }
 
-fn transform_to_vec(stmt: Statement, date_start: String, date_end: String) -> Vec<DatabaseStruct> {
+fn transform_to_vec(mut stmt: Statement, date_start: String, date_end: String) -> Vec<DatabaseStruct> {
     let data = stmt
         .query_map(
             &[
@@ -93,7 +93,7 @@ fn transform_to_vec(stmt: Statement, date_start: String, date_end: String) -> Ve
                 })
             },
         )
-        .expect("Something went wrong in querying for result!");
+        .expect(&("Something went wrong in querying for result!".to_owned() + &date_end + &date_start));
     let mut res: Vec<DatabaseStruct> = vec![];
     for dat in data {
         res.push(dat.unwrap());

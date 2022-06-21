@@ -1,0 +1,8 @@
+<div class="focus-dialog">
+  <h1 mat-dialog-title>Focus Result</h1>
+  <div>
+    <p>You have focused for <b>{{ getMinute() }}</b> minutes.</p>
+    <p>In total, <b>{{ data.totalSession }}</b> pomodoro sessions.</p>
+    <button mat-flat-button (click)="onNoClick()">GREAT!</button>
+  </div>
+</div>

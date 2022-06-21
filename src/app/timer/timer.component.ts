@@ -5,6 +5,8 @@ import TimerPlay from "../models/timerPlay";
 import {SoundEffectService} from "../sound-effect.service";
 import {SettingsService} from "../settings.service";
 import {TimerTempStateService} from "../timer-temp-state.service";
+import {ResultDialogComponent} from "../result-dialog/result-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-timer',
@@ -17,12 +19,12 @@ export class TimerComponent implements OnInit {
   private playState: TimerPlay = TimerPlay.stop;
   private curTime: number = 0;
   private seq: number = 1;
-  private totalTime: number = 0;
-  private totalSession: number = 0;
+  public totalTime: number = 0;
+  public totalSession: number = 0;
   private counting: boolean = false;
 
-
-  constructor(private soundEffect: SoundEffectService, public settings: SettingsService, private store: TimerTempStateService) {
+  constructor(private soundEffect: SoundEffectService, public settings: SettingsService,
+              private store: TimerTempStateService, private dialog: MatDialog) {
     this.settings.setTimerReset(this.reset.bind(this));
   }
 
@@ -104,6 +106,10 @@ export class TimerComponent implements OnInit {
   }
 
   public stop(): void {
+    this.openDialog();
+    this.store.storeData(this.totalTime, this.totalSession);
+    this.totalTime = 0;
+    this.totalSession = 0;
     this.reset();
   }
 
@@ -142,6 +148,9 @@ export class TimerComponent implements OnInit {
       }
 
       else if (this.curTime === 0) {
+        if (this.state === timerState.focus) {
+          this.totalSession++;
+        }
         this.counting = false;
         this.goNext();
         this.start();
@@ -192,5 +201,12 @@ export class TimerComponent implements OnInit {
       this.store.curTime = -1;
       this.playState = TimerPlay.pause;
     }
+  }
+
+  private openDialog(): void {
+    const dialogRef = this.dialog.open(ResultDialogComponent, {
+      width: '360px',
+      data: {totalSession: this.totalSession, totalTime: this.totalTime},
+    });
   }
 }
