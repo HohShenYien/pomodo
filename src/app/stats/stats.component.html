@@ -1,1 +1,22 @@
-<app-stat-calendar></app-stat-calendar>
+<div>
+  <div class="tab-group">
+    <button
+      mat-flat-button
+      [ngClass]="mode === StatMode.CHART ? 'active' : ''"
+      (click)="mode = StatMode.CHART"
+    >
+      CHART
+    </button>
+    <button
+      mat-flat-button
+      [ngClass]="mode === StatMode.CALENDAR ? 'active' : ''"
+      (click)="mode = StatMode.CALENDAR"
+    >
+      CALENDAR
+    </button>
+  </div>
+  <div [ngSwitch]="mode">
+    <app-stat-calendar *ngSwitchCase="StatMode.CALENDAR"></app-stat-calendar>
+    <app-stat-chart *ngSwitchCase="StatMode.CHART"></app-stat-chart>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.stat-chart {
+  width: calc(100% - 32px);
+  padding: 16px;
+  #plotly-plot {
+    width: 100%;
+    aspect-ratio: 2;
+  }
+  .options {
+    display: flex;
+    span {
+      display: block;
+      flex: 1;
+    }
+    mat-select {
+      width: 20ch;
+    }
+    div {
+      width: 20px;
+    }
+  }
+}

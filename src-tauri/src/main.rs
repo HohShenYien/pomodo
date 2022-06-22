@@ -27,7 +27,7 @@ fn append_data(data: String, state: tauri::State<database::DatabaseState>) {
 }
 
 #[tauri::command]
-fn query_data(
+fn query_totals(
     start_date: String,
     end_date: String,
     state: tauri::State<database::DatabaseState>,
@@ -37,7 +37,7 @@ fn query_data(
 }
 
 #[tauri::command]
-fn query_all(
+fn query_data(
     start_date: String,
     end_date: String,
     state: tauri::State<database::DatabaseState>,
@@ -57,8 +57,8 @@ fn main() {
             store_settings,
             get_settings,
             append_data,
+            query_totals,
             query_data,
-            query_all,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

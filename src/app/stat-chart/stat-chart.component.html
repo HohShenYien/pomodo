@@ -1,0 +1,23 @@
+<div class="stat-chart">
+  <div class="options">
+    <span></span>
+    <mat-form-field appearance="outline">
+      <mat-label>Type of Value</mat-label>
+      <mat-select [(value)]="valueStr">
+        <mat-option value="option1" (click)="valueType = ValueType.DURATION; createGraph();">Duration</mat-option>
+        <mat-option value="option2" (click)="valueType = ValueType.NUM_SESSION; createGraph();">Number of Pomodoro</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div></div>
+    <mat-form-field appearance="outline">
+      <mat-label>Duration</mat-label>
+      <mat-select [(value)]="modeStr">
+        <mat-option value="option1" (click)="chartMode = ChartMode.WEEK; createGraph()">Week</mat-option>
+        <mat-option value="option2" (click)="chartMode = ChartMode.MONTH; createGraph()">Month</mat-option>
+        <mat-option value="option2" (click)="chartMode = ChartMode.YEAR; createGraph()">Year</mat-option>
+        <mat-option value="option2" (click)="chartMode = ChartMode.ALL; createGraph()">All</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div id='plotly-plot'></div>
+</div>

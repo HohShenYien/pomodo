@@ -25,6 +25,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { StatCalendarComponent } from './stat-calendar/stat-calendar.component';
 import { ResultDialogComponent } from './result-dialog/result-dialog.component';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { StatChartComponent } from './stat-chart/stat-chart.component';
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -36,28 +38,30 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
     StatsComponent,
     NumberInputComponent,
     StatCalendarComponent,
-    ResultDialogComponent
+    ResultDialogComponent,
+    StatChartComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatProgressSpinnerModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    MatTooltipModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory,
-    }),
-    MatDialogModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatProgressSpinnerModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
+        MatTooltipModule,
+        MatSliderModule,
+        MatSlideToggleModule,
+        CalendarModule.forRoot({
+            provide: DateAdapter,
+            useFactory: adapterFactory,
+        }),
+        MatDialogModule,
+        MatSelectModule
+    ],
   providers: [{
     provide: MatDialogRef,
     useValue: {}
