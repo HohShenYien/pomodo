@@ -1,27 +1,31 @@
 # Pomodo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+A Windows desktop application that keeps track of your time and helps you to focus using pomodoro technique!
 
-## Development server
+Download the exe file directly [here](https://github.com/HohShenYien/pomodo/releases/download/1.0.0/Pomodo.App.zip)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![image](https://user-images.githubusercontent.com/55322546/178267779-2550e670-0b14-4e45-9fb1-6a6f80188a71.png)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- A timer
 
-## Build
+  <img src="https://user-images.githubusercontent.com/55322546/178267885-a49021cc-23f6-45b9-82f3-6f8be2039718.png" alt="demo 1" style="width:200px;"/>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Allows you to customize your settings and remembers it the next time you use the app
 
-## Running unit tests
+  <img src="https://user-images.githubusercontent.com/55322546/178268224-240f0fc3-f4cb-4703-ac24-b7e4ba1c56cb.png" alt="demo 2" style="width:500px;"/>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- A progress chart that keeps track of your progress each day.
 
-## Running end-to-end tests
+  <img src="https://user-images.githubusercontent.com/55322546/178269198-668db57a-4597-480b-b57f-8af0a3edd6ae.png" alt="demo 3" style="width:500px;"/>
+  
+- A calendar that tells you how many sessions you have been doing each day.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+  <img src="https://user-images.githubusercontent.com/55322546/178269522-ef8da041-e57f-44e0-9028-b99eaf46587c.png" alt="demo 4" style="width:500px;"/>
 
-## Further help
+## Afterwords
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- This is an app that I built to better understand Angular & Rust. Also my first try in Tauri.
+- This would be the third Pomodoro App that I build. In comparison to the past 2 apps, this app has the best looks and has the most features so far.
+- Of course, this application still contains some tiny issues and can have some enhancements, but it should work as expected.
